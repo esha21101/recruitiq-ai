@@ -6,3 +6,4 @@ google-generativeai
 chromadb
 python-dotenv
 tqdm
+python-docx
