@@ -1,19 +1,68 @@
 def build_candidate_text(candidate):
-    profile = candidate.get("profile", {})
 
-    text_parts = []
+    profile = candidate.get(
+        "profile",
+        {}
+    )
 
-    text_parts.append(profile.get("headline", ""))
-    text_parts.append(profile.get("summary", ""))
+    parts = []
 
-    for job in candidate.get("career_history", []):
-        text_parts.append(job.get("title", ""))
-        text_parts.append(job.get("description", ""))
+    # Current role
 
-    for skill in candidate.get("skills", []):
-        text_parts.append(skill.get("name", ""))
+    parts.append(
+        profile.get(
+            "current_title",
+            ""
+        )
+    )
 
-    for cert in candidate.get("certifications", []):
-        text_parts.append(cert.get("name", ""))
+    # Career history
 
-    return " ".join(text_parts)
+    for job in candidate.get(
+        "career_history",
+        []
+    ):
+
+        parts.append(
+            job.get(
+                "title",
+                ""
+            )
+        )
+
+        parts.append(
+            job.get(
+                "description",
+                ""
+            )
+        )
+
+    # Skills
+
+    for skill in candidate.get(
+        "skills",
+        []
+    ):
+
+        parts.append(
+            skill.get(
+                "name",
+                ""
+            )
+        )
+
+    # Certifications
+
+    for cert in candidate.get(
+        "certifications",
+        []
+    ):
+
+        parts.append(
+            cert.get(
+                "name",
+                ""
+            )
+        )
+
+    return " ".join(parts)
