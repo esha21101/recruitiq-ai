@@ -7,3 +7,4 @@ chromadb
 python-dotenv
 tqdm
 python-docx
+sentence-transformers
