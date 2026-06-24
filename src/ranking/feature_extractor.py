@@ -55,7 +55,30 @@ def extract_features(candidate):
             candidate["redrob_signals"].get(
                 "recruiter_response_rate",
                 0
-            )
+            ),
+            "saved_by_recruiters":
+    candidate["redrob_signals"].get(
+        "saved_by_recruiters_30d",
+        0
+    ),
+
+"search_appearance":
+    candidate["redrob_signals"].get(
+        "search_appearance_30d",
+        0
+    ),
+
+"interview_completion":
+    candidate["redrob_signals"].get(
+        "interview_completion_rate",
+        0
+    ),
+
+"offer_acceptance":
+    candidate["redrob_signals"].get(
+        "offer_acceptance_rate",
+        -1
+    )
     }
 
     for keyword in AI_KEYWORDS:

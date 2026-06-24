@@ -15,7 +15,7 @@ def score_candidate(features):
     elif 3 <= exp <= 12:
         score += 15
 
-    # Title relevance
+    # Title
 
     score += get_title_score(
         features["current_title"]
@@ -48,11 +48,31 @@ def score_candidate(features):
     if features["open_to_work"]:
         score += 10
 
-    # Response rate
+    # Recruiter behavior
 
     score += (
-        features["response_rate"] * 10
+        features["saved_by_recruiters"]
+        * 0.8
     )
+
+    score += (
+        features["search_appearance"]
+        * 0.02
+    )
+
+    score += (
+        features["interview_completion"]
+        * 15
+    )
+
+    # Offer acceptance
+
+    if features["offer_acceptance"] >= 0:
+
+        score += (
+            features["offer_acceptance"]
+            * 10
+        )
 
     # Github
 
