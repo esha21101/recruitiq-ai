@@ -21,28 +21,6 @@ def score_candidate(features):
         features["current_title"]
     )
 
-    # AI keywords
-
-    ai_keywords = [
-        "embeddings",
-        "retrieval",
-        "ranking",
-        "llm",
-        "rag",
-        "faiss",
-        "milvus",
-        "pinecone",
-        "qdrant",
-        "weaviate"
-    ]
-
-    for keyword in ai_keywords:
-
-        key = f"has_{keyword}"
-
-        if key in features and features[key]:
-            score += 8
-
     # Open to work
 
     if features["open_to_work"]:
