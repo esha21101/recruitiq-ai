@@ -1,12 +1,29 @@
+# Virtual environments
 venv/
 .venv/
 
+# Python cache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
+# Environment variables
 .env
 
+# VSCode
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large generated files
 data/raw/
+candidate_embeddings.pkl
+
+# Temporary outputs
 outputs/
 
-.vscode/
+# OS files
+.DS_Store
+Thumbs.db

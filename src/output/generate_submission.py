@@ -152,7 +152,7 @@ df = df.sort_values(
 
 df.to_excel(
 
-    "src/output/submission.xlsx",
+    "outputs/submission.xlsx",
 
     index=False
 
